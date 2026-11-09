@@ -25,7 +25,7 @@ const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 $$(".reveal").forEach(el=>ro.observe(el));
 
 /* portfolio + filter */
-const cats=["All","Graphic Design","Photography","Filmmaking","Video Making"];
+const cats=["All","Graphic Design","Photography","Filmmaking","Video Making","Creative Direction"];
 const fBox=$("#filters"), grid=$("#grid");
 cats.forEach((c,i)=>{const b=document.createElement("button");b.textContent=c;if(!i)b.className="on";b.onclick=()=>{$$("button",fBox).forEach(x=>x.classList.remove("on"));b.classList.add("on");render(c)};fBox.append(b)});
 function render(cat="All"){
@@ -34,7 +34,7 @@ function render(cat="All"){
     const el=document.createElement("article");el.className="pcard";el.style.animationDelay=i*70+"ms";
     el.innerHTML=`<div class="thumb"><img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" style="object-fit:${p.fit||"cover"};object-position:${p.pos||"center"}" onerror="this.replaceWith(document.createTextNode('Tambahkan gambar'))"></div>
     <div class="pbody"><small>${esc(p.category)}</small><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
-    ${p.link?`<a class="btn" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.label||"Lihat Project")}</a>`:`<span class="soon">Link belum tersedia</span>`}</div>`;
+    ${p.link?`<a class="btn" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.label||"Lihat Project")}</a>`:``}</div>`;
     grid.append(el);
   });
 }
