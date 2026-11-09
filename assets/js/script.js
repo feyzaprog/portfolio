@@ -1,7 +1,7 @@
 /* ====== DATA PORTFOLIO: tambah karya baru di sini ====== */
 const projects = [
  {title:"Film Pendek – Juara 1",category:"Filmmaking",description:"Proyek film pendek bersama tim yang berhasil meraih Juara 1 dalam kompetisi yang diikuti.",image:"assets/img/portfolio/film-pendek.jpg",pos:"center 40%",link:"https://www.instagram.com/reel/DYNVq0JyE6p/",label:"Lihat Project"},
- {title:"Desain Acara POSSMA V",category:"Graphic Design",description:"Desain kreatif untuk acara POSSMA V: berbagai kebutuhan visual yang menjadi identitas dan publikasi acara.",image:"assets/img/portfolio/possma-v.jpg",fit:"contain",link:""},
+ {title:"Panitia PDD POSSMA V",category:"Graphic Design",description:"Desain kreatif untuk acara POSSMA V: berbagai kebutuhan visual yang menjadi identitas dan publikasi acara.",image:"assets/img/portfolio/possma-v.jpg",fit:"contain",link:""},
  {title:"Video Teaser POSSMA V",category:"Video Making",description:"Video teaser yang dibuat oleh saya dan tim PDD POSSMA V.",image:"assets/img/portfolio/teaser.jpg",pos:"68% center",link:"https://www.instagram.com/p/DeLPK3gNaP5/",label:"Lihat Project"},
  {title:"Desain Postingan IG",category:"Graphic Design",description:"Desain postingan Instagram yang mengabadikan pengalaman dan kenangan mendaki Gunung Lawu.",image:"assets/img/portfolio/lawu.jpg",link:"https://www.instagram.com/p/DWlI1D2EYGu/?img_index=1",label:"Lihat Project"},
  {title:"Film Pendek – Juara 3",category:"Filmmaking",description:"Film pendek untuk memperingati Dies Maulidiyah MAN 1 Jember.",image:"assets/img/portfolio/film2.png",link:"https://www.instagram.com/reel/DJdauS3SOdN/",label:"Lihat Project"},
