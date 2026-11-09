@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050510">
+<title>Muhammad Abbad Faeyzaddin Annahid | Portfolio</title>
+<meta name="description" content="Portfolio Graphic Designer, Photographer & Video Editor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div id="loader"><div class="lens"></div><p>Loading portfolio…</p></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="liquid" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".012 .03" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<header id="nav">
+  <nav id="menu"><span id="pill"></span>
+    <a href="#home" data-g="home">Home</a><a href="#about" data-g="about">About</a><a href="#portfolio" data-g="portfolio">Portfolio</a><a href="#contact" data-g="contact">Contact</a>
+    <i class="sep"></i>
+    <button id="snd" class="off" aria-label="Efek suara" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="w" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/><path class="x" d="M17 9l5 6M22 9l-5 6"/></svg></button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1><span class="grad">Welcome to</span><br>My Portfolio</h1>
+      <p class="type"><span id="typed"></span><i class="caret"></i></p>
+      <p class="lead">Halo, saya Muhammad Abbad Faeyzaddin Annahid. Saya mengubah ide, momen, dan potongan gambar menjadi cerita visual yang punya makna.</p>
+      <div class="btns"><a class="btn primary" href="#portfolio">Explore Portfolio</a><a class="btn ghost" href="#contact">Contact Me</a></div>
+      <div class="findrow"><small>FIND ME</small>
+        <a href="https://www.instagram.com/_abdfyz/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.tiktok.com/@peiiijaa" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.4 2.6 2.1 4.2 5 4.5"/></svg></a>
+        <a href="https://wa.me/6285122097786" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8L4 20z"/><path d="M9 9c.5 3 2.5 5 6 6l1-1.5-2-1-1 .7c-1-.5-1.7-1.2-2.2-2.2l.7-1-1-2z"/></svg></a>
+      </div>
+    </div>
+    <div class="id-zone">
+      <div id="id3d" aria-label="ID Card 3D, tarik ke bawah lalu lepaskan"></div>
+      <button class="btn ghost small" id="toggleHero">🕷️ Ubah ke Spider-Man</button>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <div class="wrap">
+    <h2 class="center reveal">About Me</h2>
+    <div class="about2 reveal">
+      <div class="a-name"><h3><span class="grad">Hi, I'm</span><br>Muhammad Abbad<br>Faeyzaddin Annahid</h3><a class="btn primary small" href="#contact">Hubungi Saya ➤</a></div>
+      <div class="a-photo" id="aPhoto">
+        <img class="n" src="assets/img/about.png" alt="Foto Muhammad Abbad" draggable="false" onerror="this.parentNode.classList.add('empty')">
+        <img class="s" src="assets/img/about-spiderman.png" alt="" draggable="false" onerror="this.remove()">
+        <span class="ph">Tambahkan<br>about.png</span>
+      </div>
+      <div class="a-text">
+        <p>Halo! Saya <b>Muhammad Abbad Faeyzaddin Annahid</b>, desainer grafis, fotografer, dan video editor yang tertarik pada dunia kreativitas dan visual storytelling.</p>
+        <p>Saya senang mengubah ide menjadi karya visual yang punya cerita dan makna: dari desain grafis yang menarik, momen yang diabadikan lewat kamera, sampai potongan gambar yang disusun menjadi video yang bercerita.</p>
+        <p>Bagi saya, kreativitas adalah proses untuk terus bereksplorasi, belajar, dan berkembang. Saya selalu ingin mencoba hal baru dan membuat karya yang meninggalkan kesan bagi orang lain.</p>
+        <a class="more" href="#portfolio">Lihat Projek →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="sec">
+  <div class="wrap">
+    <h2 class="center reveal">Education</h2>
+    <div class="edu">
+      <article class="glass reveal"><i>🏫</i><div><h3>SD Al-Baitul Amien Jember</h3><p>Sekolah Dasar</p></div></article>
+      <article class="glass reveal"><i>📘</i><div><h3>SMP Al-Baitul Amien Jember</h3><p>Sekolah Menengah Pertama</p></div></article>
+      <article class="glass reveal"><i>🎓</i><div><h3>MAN 1 Jember</h3><p>Madrasah Aliyah</p><span class="tag">Sedang menempuh pendidikan</span></div></article>
+    </div>
+    <div class="stats">
+      <div class="glass reveal"><b data-n="6">0</b><span>Projects<br><small>Karya yang dibuat</small></span></div>
+      <div class="glass reveal"><b data-n="4">0</b><span>Categories<br><small>Bidang kreatif</small></span></div>
+      <div class="glass reveal"><b data-n="2">0</b><span>Awards<br><small>Juara 1 &amp; Juara 3</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="music" class="sec">
+  <div class="wrap glass music reveal">
+    <div><h2>A little music.<br><span class="grad">A lot of ideas.</span></h2><p class="sub">Playlist yang menemani proses kreatif saya. Putar langsung di sini, tanpa pindah halaman.</p></div>
+    <div class="spotify"><iframe title="Spotify playlist" src="https://open.spotify.com/embed/playlist/0vMnDeqeEHFy7wTXmbGzZO?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<section id="portfolio" class="sec">
+  <div class="wrap">
+    <h2 class="center reveal">Portfolio</h2>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="wrap">
+    <h2 class="center reveal">Hubungi saya</h2>
+    <div class="two">
+      <div class="glass reveal">
+        <h3 class="grad">Hubungi</h3><p class="note">Ada yang ingin ditanyakan? Langsung kirim pesan ke saya.</p>
+        <form id="contactForm" novalidate>
+          <label>Nama<input name="name" required placeholder="Nama Anda"><em></em></label>
+          <label>Email<input name="email" type="email" required placeholder="Email Anda"><em></em></label>
+          <label>Pesan<textarea name="msg" rows="4" required placeholder="Pesan Anda"></textarea><em></em></label>
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
+        <p class="note">Pesan dibuka di WhatsApp dengan teks yang sudah terisi.</p>
+      </div>
+      <div class="glass reveal">
+        <h3>Komentar <span id="cCount"></span></h3>
+        <form id="cForm" novalidate>
+          <label>Nama<input id="cName" maxlength="40" placeholder="Masukkan nama kamu…"><em></em></label>
+          <label>Komentar<textarea id="cText" rows="3" maxlength="300" placeholder="Tulis komentar kamu di sini…"></textarea><em></em></label>
+          <button class="btn primary" type="submit">Kirim Komentar</button>
+        </form>
+        <ul id="comments" class="comments"></ul>
+        <p class="note">Komentar tersimpan di browser ini saja (localStorage). Lihat README untuk Supabase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="findme" class="sec">
+  <div class="wrap narrow">
+    <h2 class="center reveal">Find Me</h2>
+    <a class="row glass reveal" href="https://www.instagram.com/_abdfyz/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg><div><b>Instagram</b><span>@_abdfyz</span></div><em>↗</em></a>
+    <a class="row glass reveal" href="https://www.tiktok.com/@peiiijaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.4 2.6 2.1 4.2 5 4.5"/></svg><div><b>TikTok</b><span>@peiiijaa</span></div><em>↗</em></a>
+    <a class="row glass reveal" href="https://wa.me/6285122097786" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8L4 20z"/><path d="M9 9c.5 3 2.5 5 6 6l1-1.5-2-1-1 .7c-1-.5-1.7-1.2-2.2-2.2l.7-1-1-2z"/></svg><div><b>WhatsApp</b><span>+62 851-2209-7786</span></div><em>↗</em></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b class="logo">Abbad.creative</b><p>Graphic Designer, Photographer &amp; Video Editor. Membuat cerita lewat visual.</p></div>
+    <div><h4>Navigasi</h4><a href="#home">Home</a><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a></div>
+    <div><h4>Terhubung</h4><a href="https://www.instagram.com/_abdfyz/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@peiiijaa" target="_blank" rel="noopener">TikTok</a><a href="https://wa.me/6285122097786" target="_blank" rel="noopener">WhatsApp</a></div>
+  </div>
+  <p class="copy">© <span id="year"></span> Muhammad Abbad Faeyzaddin Annahid. All rights reserved.</p>
+</footer>
+<button id="toTop" aria-label="Kembali ke atas">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
