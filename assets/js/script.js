@@ -50,20 +50,47 @@ $("#contactForm").addEventListener("submit",e=>{
   const text=`Halo Abbad, saya ${n.value.trim()} (${m.value.trim()}).\n\n${t.value.trim()}`;
   open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`,"_blank","noopener");f.reset();
 });
-/* komentar (localStorage) */
+/* komentar: Supabase (publik) — kalau URL/KEY kosong, otomatis pakai localStorage */
+const SUPABASE_URL = "https://ymoyheeccsungkzfjctm.supabase.co";
+const SUPABASE_KEY = "sb_publishable_A8xoZkrvpXm7AbkHWxXWfg_JmpZ9yoB";
+const useDB = !!(SUPABASE_URL && SUPABASE_KEY);
 const KEY="portfolio_comments";
-const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||[]}catch{return[]}};
-function showComments(){
-  const list=load(),ul=$("#comments");$("#cCount").textContent=list.length?"("+list.length+")":"";
+const dbHeaders={apikey:SUPABASE_KEY,"Content-Type":"application/json"};
+const fmt=d=>new Date(d).toLocaleDateString("id-ID");
+async function loadComments(){
+  if(useDB){
+    try{
+      const r=await fetch(`${SUPABASE_URL}/rest/v1/comments?select=name,text,created_at&order=created_at.desc&limit=50`,{headers:dbHeaders});
+      if(!r.ok)throw 0;
+      return (await r.json()).map(c=>({name:c.name,text:c.text,date:fmt(c.created_at)}));
+    }catch{return null}
+  }
+  try{return JSON.parse(localStorage.getItem(KEY))||[]}catch{return[]}
+}
+async function saveComment(name,text){
+  if(useDB){
+    const r=await fetch(`${SUPABASE_URL}/rest/v1/comments`,{method:"POST",headers:{...dbHeaders,Prefer:"return=minimal"},body:JSON.stringify({name,text})});
+    if(!r.ok)throw new Error("gagal");
+    return;
+  }
+  let list=[];try{list=JSON.parse(localStorage.getItem(KEY))||[]}catch{}
+  list.unshift({name,text,date:fmt(Date.now())});
+  try{localStorage.setItem(KEY,JSON.stringify(list.slice(0,50)))}catch{}
+}
+async function showComments(){
+  const ul=$("#comments"),list=await loadComments();
+  if(list===null){ul.innerHTML="<li>Komentar gagal dimuat. Coba refresh halaman.</li>";return}
+  $("#cCount").textContent=list.length?"("+list.length+")":"";
   ul.innerHTML=list.length?"":"<li>Belum ada komentar. Jadilah yang pertama!</li>";
   list.forEach(c=>{const li=document.createElement("li");li.innerHTML=`<b>${esc(c.name)}</b><small>${esc(c.date)}</small><p>${esc(c.text)}</p>`;ul.append(li)});
 }
-$("#cForm").addEventListener("submit",e=>{
-  e.preventDefault();const n=$("#cName"),t=$("#cText");
+$("#cForm").addEventListener("submit",async e=>{
+  e.preventDefault();const n=$("#cName"),t=$("#cText"),btn=e.target.querySelector("button[type=submit]");
   if(![check(n,n.value.trim().length>1,"Isi nama."),check(t,t.value.trim().length>1,"Isi komentar.")].every(Boolean))return;
-  const list=load();list.unshift({name:n.value.trim(),text:t.value.trim(),date:new Date().toLocaleDateString("id-ID")});
-  try{localStorage.setItem(KEY,JSON.stringify(list.slice(0,50)))}catch{}
-  n.value=t.value="";showComments();
+  btn.disabled=true;
+  try{await saveComment(n.value.trim().slice(0,50),t.value.trim().slice(0,300));n.value=t.value="";}
+  catch{check(t,false,"Gagal mengirim komentar. Coba lagi.");}
+  btn.disabled=false;showComments();
 });
 showComments();
 
